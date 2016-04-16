@@ -13,9 +13,9 @@ build:
 
 requirements:
     build:
-        - jpeg
+        - jpeg 9b
     run:
-        - jpeg
+        - jpeg 9b
 
 test:
     commands:
