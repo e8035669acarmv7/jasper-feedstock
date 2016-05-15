@@ -5,7 +5,7 @@ Home: http://www.ece.uvic.ca/~frodo/jasper/
 
 Package license: http://www.ece.uvic.ca/~frodo/jasper/LICENSE
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: A reference implementation of the codec specified in the JPEG-2000 Part-1 standard.
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/jasper-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/jasper-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/jasper-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/jasper-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/jasper-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/jasper-feedstock/branch/master)
