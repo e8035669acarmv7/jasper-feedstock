@@ -7,7 +7,7 @@ package:
 source:
   fn: jasper-{{ version }}.zip
   url: http://www.ece.uvic.ca/~frodo/jasper/software/jasper-{{ version }}.zip
-  sha1: 9c5735f773922e580bf98c7c7dfda9bbed4c5191
+  sha256: 6b905a9c2aca2e275544212666eefc4eb44d95d0a57e4305457b407fe63f9494
 
 build:
   number: 4
@@ -27,7 +27,8 @@ test:
 
 about:
   home: http://www.ece.uvic.ca/~frodo/jasper/
-  license: http://www.ece.uvic.ca/~frodo/jasper/LICENSE
+  license: JasPer 2.0
+  license_file: LICENSE
   summary: 'A reference implementation of the codec specified in the JPEG-2000 Part-1 standard.'
 
 extra:
