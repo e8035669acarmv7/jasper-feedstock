@@ -1,34 +1,38 @@
+{% set version = "1.900.1" %}
+
 package:
-    name: jasper
-    version: 1.900.1
+  name: jasper
+  version: {{ version }}
 
 source:
-    fn: jasper-1.900.1.zip
-    url: http://www.ece.uvic.ca/~frodo/jasper/software/jasper-1.900.1.zip
-    sha1: 9c5735f773922e580bf98c7c7dfda9bbed4c5191
+  fn: jasper-{{ version }}.zip
+  url: http://www.ece.uvic.ca/~frodo/jasper/software/jasper-{{ version }}.zip
+  sha256: 6b905a9c2aca2e275544212666eefc4eb44d95d0a57e4305457b407fe63f9494
 
 build:
-    number: 3
-    skip: True  # [win]
+  number: 4
+  skip: True  # [win]
 
 requirements:
-    build:
-        - jpeg 9*
-    run:
-        - jpeg 9*
+  build:
+    - jpeg 9*
+  run:
+    - jpeg 9*
 
 test:
-    commands:
-        - jasper --version
-        - conda inspect linkages -n _test jasper  # [linux]
+  commands:
+    - jasper --version
+    - conda inspect linkages -p $PREFIX jasper  # [not win]
+    - conda inspect objects -p $PREFIX jasper  # [osx]
 
 about:
   home: http://www.ece.uvic.ca/~frodo/jasper/
-  license: http://www.ece.uvic.ca/~frodo/jasper/LICENSE
-  summary: A reference implementation of the codec specified in the JPEG-2000 Part-1 standard.
+  license: JasPer 2.0
+  license_file: LICENSE
+  summary: 'A reference implementation of the codec specified in the JPEG-2000 Part-1 standard.'
 
 extra:
-    recipe-maintainers:
-        - jakirkham
-        - jhamman
-        - ocefpaf
+  recipe-maintainers:
+    - jakirkham
+    - jhamman
+    - ocefpaf
