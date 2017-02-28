@@ -3,7 +3,7 @@ About jasper
 
 Home: http://www.ece.uvic.ca/~frodo/jasper/
 
-Package license: http://www.ece.uvic.ca/~frodo/jasper/LICENSE
+Package license: JasPer 2.0
 
 Feedstock license: BSD 3-Clause
 
