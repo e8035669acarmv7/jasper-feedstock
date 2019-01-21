@@ -10,8 +10,11 @@ source:
   sha256: 6b905a9c2aca2e275544212666eefc4eb44d95d0a57e4305457b407fe63f9494
 
 build:
-  number: 1005
+  number: 1006
   skip: True  # [win]
+  run_exports:
+    # no info.  Leaving at default behavior.
+    - {{ pin_subpackage('jasper') }}
 
 requirements:
   build:
