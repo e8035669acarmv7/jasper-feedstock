@@ -20,6 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - automake             # [unix]
     - autoconf             # [unix]
+    - libtool              # [unix]
     - make                 # [unix]
   host:
     - jpeg
