@@ -7,7 +7,7 @@ sh configure --prefix=$PREFIX \
              --disable-dependency-tracking
 
 make
-make check || { cat test/bin/test-suite.log; exit 1 }
+make check || { cat test/bin/test-suite.log; exit 1; }
 make install
 
 # We can remove this when we start using the new conda-build.
