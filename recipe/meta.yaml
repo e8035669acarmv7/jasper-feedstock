@@ -8,7 +8,9 @@ source:
   url: https://github.com/mdadams/jasper/archive/version-1.900.31.tar.gz
   sha256: 0099084dce9fa0a318b48a5ed2a12ac7cff3324f3fd4459833e6fe2ff583fb2c
   patches:
-    - test.diff
+    # Skipping test due to https://github.com/mdadams/jasper/issues/179
+    # non linux64 is on a new enough system version of bash for this to not be an issue
+    - test.diff  # [linux64]
 
 build:
   number: 0
