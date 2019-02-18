@@ -4,6 +4,7 @@ export CFLAGS="-fPIC"
 export LDFLAGS="-L${PREFIX}/lib"
 export CPPFLAGS="-I${PREFIX}/include"
 
+autoreconf -vfi
 sh configure --prefix=$PREFIX \
              --enable-shared \
              --disable-debug \
