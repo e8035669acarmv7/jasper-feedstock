@@ -5,14 +5,10 @@ package:
   version: {{ version }}
 
 source:
-  # url: https://github.com/mdadams/jasper/archive/version-{{ version }}.tar.gz
   url: http://www.ece.uvic.ca/~frodo/jasper/software/jasper-{{ version }}.tar.gz
   sha256: 2a1f61e55afe8b4ce8115e1508c5d7cb314d56dfcc2dd323f90c072f88ccf57b
   patches:
     - CVE-2018-9055-330751ce.patch
-    # Skipping test due to https://github.com/mdadams/jasper/issues/179
-    # non linux64 is on a new enough system version of bash for this to not be an issue
-    # - test.diff  # [linux64]
 
 build:
   number: 0
