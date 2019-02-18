@@ -7,6 +7,8 @@ package:
 source:
   url: https://github.com/mdadams/jasper/archive/version-1.900.31.tar.gz
   sha256: 0099084dce9fa0a318b48a5ed2a12ac7cff3324f3fd4459833e6fe2ff583fb2c
+  patches:
+    - test.diff
 
 build:
   number: 0
@@ -22,8 +24,6 @@ requirements:
     - autoconf             # [unix]
     - libtool              # [unix]
     - make                 # [unix]
-    # the test suite for jasper requires coreutils for some weird reason
-    - coreutils            # [unix]
   host:
     - jpeg
   run:
