@@ -36,12 +36,12 @@ requirements:
     - make
   host:
     - jpeg
-    - libglu                            # [linux]
-    - freeglut                          # [linux]
+    - libglu                            # [linux64]
+    - freeglut                          # [linux64]
   run:
     - jpeg
-    - {{ pin_compatible('libglu') }}    # [linux]
-    - {{ pin_compatible('freeglut') }}  # [linux]
+    - {{ pin_compatible('libglu') }}    # [linux64]
+    - {{ pin_compatible('freeglut') }}  # [linux64]
 
 test:
   commands:
