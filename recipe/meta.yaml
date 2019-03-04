@@ -22,16 +22,16 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ cdt('mesa-libgl-devel') }}     # [linux]
-    - {{ cdt('mesa-dri-drivers') }}     # [linux]
-    - {{ cdt('libxdamage') }}           # [linux]
-    - {{ cdt('libselinux') }}           # [linux]
-    - {{ cdt('libxext') }}              # [linux]
-    - {{ cdt('libxfixes') }}            # [linux]
-    - {{ cdt('libxcb') }}               # [linux]
-    - {{ cdt('libxau') }}               # [linux]
-    - {{ cdt('libxi') }}                # [linux]
-    - {{ cdt('libxxf86vm') }}           # [linux]
+    - {{ cdt('mesa-libgl-devel') }}     # [linux64]
+    - {{ cdt('mesa-dri-drivers') }}     # [linux64]
+    - {{ cdt('libxdamage') }}           # [linux64]
+    - {{ cdt('libselinux') }}           # [linux64]
+    - {{ cdt('libxext') }}              # [linux64]
+    - {{ cdt('libxfixes') }}            # [linux64]
+    - {{ cdt('libxcb') }}               # [linux64]
+    - {{ cdt('libxau') }}               # [linux64]
+    - {{ cdt('libxi') }}                # [linux64]
+    - {{ cdt('libxxf86vm') }}           # [linux64]
     - cmake
     - make
   host:
