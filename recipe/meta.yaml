@@ -1,16 +1,14 @@
-{% set version = "1.900.31" %}
+{% set version = "2.0.14" %}
 
 package:
   name: jasper
   version: {{ version }}
 
 source:
-  url: https://github.com/mdadams/jasper/archive/version-1.900.31.tar.gz
-  sha256: 0099084dce9fa0a318b48a5ed2a12ac7cff3324f3fd4459833e6fe2ff583fb2c
+  url: http://www.ece.uvic.ca/~frodo/jasper/software/jasper-{{ version }}.tar.gz
+  sha256: 2a1f61e55afe8b4ce8115e1508c5d7cb314d56dfcc2dd323f90c072f88ccf57b
   patches:
-    # Skipping test due to https://github.com/mdadams/jasper/issues/179
-    # non linux64 is on a new enough system version of bash for this to not be an issue
-    - test.diff  # [linux64]
+    - CVE-2018-9055-330751ce.patch
 
 build:
   number: 0
@@ -18,24 +16,36 @@ build:
   run_exports:
     # no info.  Leaving at default behavior.
     - {{ pin_subpackage('jasper') }}
+  missing_dso_whitelist:                                         # [osx]
+    - /System/Library/Frameworks/GLUT.framework/Versions/A/GLUT  # [osx]
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - automake             # [unix]
-    - autoconf             # [unix]
-    - libtool              # [unix]
-    - make                 # [unix]
+    - {{ cdt('mesa-libgl-devel') }}     # [not aarch64]
+    - {{ cdt('mesa-dri-drivers') }}     # [not aarch64]
+    - {{ cdt('libxdamage') }}           # [not aarch64]
+    - {{ cdt('libselinux') }}           # [not aarch64]
+    - {{ cdt('libxext') }}              # [not aarch64]
+    - {{ cdt('libxfixes') }}            # [not aarch64]
+    - {{ cdt('libxcb') }}               # [not aarch64]
+    - {{ cdt('libxau') }}               # [not aarch64]
+    - {{ cdt('libxi') }}                # [not aarch64]
+    - {{ cdt('libxxf86vm') }}           # [not aarch64]
+    - cmake
+    - make
   host:
     - jpeg
+    - libglu                            # [linux64]
+    - freeglut                          # [linux64]
   run:
     - jpeg
+    - {{ pin_compatible('libglu') }}    # [linux64]
+    - {{ pin_compatible('freeglut') }}  # [linux64]
 
 test:
   commands:
     - jasper --version
-    - conda inspect linkages -p $PREFIX jasper  # [not win]
-    - conda inspect objects -p $PREFIX jasper  # [osx]
 
 about:
   home: http://www.ece.uvic.ca/~frodo/jasper/
