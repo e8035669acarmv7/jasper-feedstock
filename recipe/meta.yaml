@@ -11,8 +11,7 @@ source:
     - CVE-2018-9055-330751ce.patch
 
 build:
-  number: 0
-  skip: True  # [win]
+  number: 1
   run_exports:
     # no info.  Leaving at default behavior.
     - {{ pin_subpackage('jasper') }}
@@ -21,30 +20,32 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ cdt('mesa-libgl-devel') }}     # [not aarch64]
-    - {{ cdt('mesa-dri-drivers') }}     # [not aarch64]
-    - {{ cdt('libxdamage') }}           # [not aarch64]
-    - {{ cdt('libselinux') }}           # [not aarch64]
-    - {{ cdt('libxext') }}              # [not aarch64]
-    - {{ cdt('libxfixes') }}            # [not aarch64]
-    - {{ cdt('libxcb') }}               # [not aarch64]
-    - {{ cdt('libxau') }}               # [not aarch64]
-    - {{ cdt('libxi') }}                # [not aarch64]
-    - {{ cdt('libxxf86vm') }}           # [not aarch64]
+    - {{ compiler('c') }}               # [not win]
+    - {{ cdt('mesa-libgl-devel') }}     # [not win and not aarch64]
+    - {{ cdt('mesa-dri-drivers') }}     # [not win and not aarch64]
+    - {{ cdt('libxdamage') }}           # [not win and not aarch64]
+    - {{ cdt('libselinux') }}           # [not win and not aarch64]
+    - {{ cdt('libxext') }}              # [not win and not aarch64]
+    - {{ cdt('libxfixes') }}            # [not win and not aarch64]
+    - {{ cdt('libxcb') }}               # [not win and not aarch64]
+    - {{ cdt('libxau') }}               # [not win and not aarch64]
+    - {{ cdt('libxi') }}                # [not win and not aarch64]
+    - {{ cdt('libxxf86vm') }}           # [not win and not aarch64]
+    - vs2017_win-64                     # [win64]
     - cmake
     - make
   host:
     - jpeg
     - libglu                            # [linux64]
-    - freeglut                          # [linux64]
+    - freeglut                          # [linux64 or win]
   run:
     - jpeg
     - {{ pin_compatible('libglu') }}    # [linux64]
-    - {{ pin_compatible('freeglut') }}  # [linux64]
+    - {{ pin_compatible('freeglut') }}  # [linux64 or win]
 
 test:
   commands:
+    - if not exist %LIBRARY_BIN%\\jasper.dll exit 1  # [win]
     - jasper --version
 
 about:
@@ -58,3 +59,4 @@ extra:
     - jakirkham
     - jhamman
     - ocefpaf
+    - seanyen
