@@ -31,6 +31,7 @@ requirements:
     - {{ cdt('libxau') }}               # [linux and not aarch64]
     - {{ cdt('libxi') }}                # [linux and not aarch64]
     - {{ cdt('libxxf86vm') }}           # [linux and not aarch64]
+    - {{ cdt('expat-devel') }}           # [linux and not aarch64]
     - cmake
     - make
   host:
