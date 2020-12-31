@@ -16,7 +16,7 @@ make install
 cd ..
 
 mkdir build_static && cd $_
-cmake \
+cmake ${CMAKE_ARGS} \
     -DJAS_ENABLE_SHARED=OFF \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
