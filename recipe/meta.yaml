@@ -20,18 +20,18 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}               # [not win]
-    - {{ cdt('mesa-libgl-devel') }}     # [not win]
-    - {{ cdt('mesa-dri-drivers') }}     # [not win]
-    - {{ cdt('libxdamage') }}           # [not win]
-    - {{ cdt('libselinux') }}           # [not win]
-    - {{ cdt('libxext') }}              # [not win]
-    - {{ cdt('libxfixes') }}            # [not win]
-    - {{ cdt('libxcb') }}               # [not win]
-    - {{ cdt('libxau') }}               # [not win]
-    - {{ cdt('libxi') }}                # [not win]
-    - {{ cdt('libxxf86vm') }}           # [not win]
-    - vs2017_win-64                     # [win64]
+    - {{ compiler('c') }}
+    - {{ cdt('mesa-libgl-devel') }}     # [linux and not aarch64]
+    - {{ cdt('mesa-dri-drivers') }}     # [linux and not aarch64]
+    - {{ cdt('libxdamage') }}           # [linux and not aarch64]
+    - {{ cdt('libselinux') }}           # [linux and not aarch64]
+    - {{ cdt('libxext') }}              # [linux and not aarch64]
+    - {{ cdt('libxfixes') }}            # [linux and not aarch64]
+    - {{ cdt('libxcb') }}               # [linux and not aarch64]
+    - {{ cdt('libxau') }}               # [linux and not aarch64]
+    - {{ cdt('libxi') }}                # [linux and not aarch64]
+    - {{ cdt('libxxf86vm') }}           # [linux and not aarch64]
+    - {{ cdt('expat-devel') }}          # [linux and not aarch64]
     - cmake
     - make
   host:
