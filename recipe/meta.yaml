@@ -21,17 +21,17 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ cdt('mesa-libgl-devel') }}     # [linux and not aarch64]
-    - {{ cdt('mesa-dri-drivers') }}     # [linux and not aarch64]
-    - {{ cdt('libxdamage') }}           # [linux and not aarch64]
-    - {{ cdt('libselinux') }}           # [linux and not aarch64]
-    - {{ cdt('libxext') }}              # [linux and not aarch64]
-    - {{ cdt('libxfixes') }}            # [linux and not aarch64]
-    - {{ cdt('libxcb') }}               # [linux and not aarch64]
-    - {{ cdt('libxau') }}               # [linux and not aarch64]
-    - {{ cdt('libxi') }}                # [linux and not aarch64]
-    - {{ cdt('libxxf86vm') }}           # [linux and not aarch64]
-    - {{ cdt('expat-devel') }}          # [linux and not aarch64]
+    - {{ cdt('mesa-libgl-devel') }}     # [linux]
+    - {{ cdt('mesa-dri-drivers') }}     # [linux]
+    - {{ cdt('libxdamage') }}           # [linux]
+    - {{ cdt('libselinux') }}           # [linux]
+    - {{ cdt('libxext') }}              # [linux]
+    - {{ cdt('libxfixes') }}            # [linux]
+    - {{ cdt('libxcb') }}               # [linux]
+    - {{ cdt('libxau') }}               # [linux]
+    - {{ cdt('libxi') }}                # [linux]
+    - {{ cdt('libxxf86vm') }}           # [linux]
+    - {{ cdt('expat-devel') }}          # [linux]
     - cmake
     - make
   host:
