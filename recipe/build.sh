@@ -11,7 +11,7 @@ cmake ${CMAKE_ARGS} \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DJAS_ENABLE_AUTOMATIC_DEPENDENCIES=False \
     ${CMAKE_PLATFORM_FLAGS[@]} ..
-make
+make -j${CPU_COUNT}
 make install
 cd ..
 
@@ -22,6 +22,6 @@ cmake ${CMAKE_ARGS} \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DJAS_ENABLE_AUTOMATIC_DEPENDENCIES=False \
     ${CMAKE_PLATFORM_FLAGS[@]} ..
-make
+make -j${CPU_COUNT}
 make install
 cd ..
