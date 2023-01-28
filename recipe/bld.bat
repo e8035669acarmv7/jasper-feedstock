@@ -3,6 +3,8 @@ set CC=cl.exe
 set CXX=cl.exe
 
 mkdir build
+mkdir build\cmake
+mkdir build\cmake\src
 cd build
 cmake ^
     -G "Ninja" ^
