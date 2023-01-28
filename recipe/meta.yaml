@@ -1,4 +1,4 @@
-{% set version = "3.0.6" %}
+{% set version = "4.0.0" %}
 
 package:
   name: jasper
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/jasper-software/jasper/releases/download/version-{{ version }}/jasper-{{ version }}.tar.gz
-  sha256: 169be004d91f6940c649a4f854ada2755d4f35f62b0555ce9e1219c778cffc09
+  sha256: 39514e1b53a5333fcff817e19565371f016ea536c36fd2d13a9c4d8da8f0be0c
 
 build:
   number: 0
