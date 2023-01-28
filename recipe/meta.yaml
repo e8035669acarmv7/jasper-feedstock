@@ -9,7 +9,7 @@ source:
   sha256: 169be004d91f6940c649a4f854ada2755d4f35f62b0555ce9e1219c778cffc09
 
 build:
-  number: 1
+  number: 0
   run_exports:
     # no info.  Leaving at default behavior.
     - {{ pin_subpackage('jasper') }}
