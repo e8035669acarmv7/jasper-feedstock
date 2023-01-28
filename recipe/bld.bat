@@ -2,10 +2,8 @@
 set CC=cl.exe
 set CXX=cl.exe
 
-mkdir build
-mkdir build\cmake
-mkdir build\cmake\src
-cd build
+mkdir build_src
+cd build_src
 cmake ^
     -G "Ninja" ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
