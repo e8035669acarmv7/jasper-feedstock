@@ -9,7 +9,7 @@ source:
   sha256: 39514e1b53a5333fcff817e19565371f016ea536c36fd2d13a9c4d8da8f0be0c
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # no info.  Leaving at default behavior.
     - {{ pin_subpackage('jasper') }}
@@ -34,11 +34,11 @@ requirements:
     - make
     - ninja                             # [win]
   host:
-    - jpeg
+    - libjpeg-turbo
     - libglu                            # [linux]
     - freeglut                          # [linux or win]
   run:
-    - jpeg
+    - libjpeg-turbo
     - {{ pin_compatible('libglu') }}    # [linux]
     - {{ pin_compatible('freeglut') }}  # [linux or win]
 
