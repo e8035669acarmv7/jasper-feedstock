@@ -1,11 +1,11 @@
-About jasper
-============
+About jasper-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jasper-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.ece.uvic.ca/~frodo/jasper/
 
-Package license: JasPer 2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jasper-feedstock/blob/main/LICENSE.txt)
+Package license: JasPer-2.0
 
 Summary: A reference implementation of the codec specified in the JPEG-2000 Part-1 standard.
 
