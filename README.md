@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jasper-feedstoc
 
 Home: http://www.ece.uvic.ca/~frodo/jasper/
 
-Package license: JasPer 2.0
+Package license: JasPer-2.0
 
 Summary: A reference implementation of the codec specified in the JPEG-2000 Part-1 standard.
 
