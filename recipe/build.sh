@@ -7,6 +7,7 @@ fi
 
 mkdir build_shared && cd $_
 cmake ${CMAKE_ARGS} \
+    -DALLOW_IN_SOURCE_BUILD=ON \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DJAS_STDC_VERSION=201112L \
@@ -18,6 +19,7 @@ cd ..
 
 mkdir build_static && cd $_
 cmake ${CMAKE_ARGS} \
+    -DALLOW_IN_SOURCE_BUILD=ON \
     -DJAS_ENABLE_SHARED=OFF \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \

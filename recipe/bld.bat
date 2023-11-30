@@ -6,6 +6,7 @@ mkdir build_src
 cd build_src
 cmake ^
     -G "Ninja" ^
+    -DALLOW_IN_SOURCE_BUILD=ON ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DBUILD_SHARED_LIBS=ON ^
